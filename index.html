@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        nav a:hover{
+            color: #737373;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class = "Navigation">
+            <a href="#/">Home</a>
+            <a href="./works.html">Projects</a>
+            <a href="">Resume</a>
+            <a style="margin-right: 2%;" href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="bgc">
+        <div class="Left">
+            <!-- backgorund -->
+            <div id="whiteBg"></div>
+            <div class="Parallelogram" id="pic"></div>
+        </div>
+
+        <!-- Main content -->
+        <main>
+            <div class = "Intro">
+                <p class="Intro">Hello,</p>
+                <p class="Intro"> My name is </p>
+                <p class="Intro" id="name"> Ritik Soni...</p>
+                <p class="Intro">I am a</p>
+                <p class="Intro" id="work"></p>
+                <!-- <span id="element"></span> -->
+
+                <!-- Load library from the CDN -->
+                <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+              
+                <!-- Setup and start animation! -->
+                <script>
+                  var typed = new Typed('#work', {
+                    strings: ['Web Developer', 'Software Developer','Android Developer'],
+                    typeSpeed: 50,
+                    backSpeed: 50,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|',
+                  });
+                </script>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
