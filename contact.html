@@ -16,8 +16,17 @@
         </nav>
     </header>
 
-    <div id="overlay">
-        <form onsubmit="event.preventDefault(); validateForm();">
+    <div class="slider">
+
+        <div class = "item" id="myContact" onclick="changeAlignmnetContactUs();">
+            <img src="github-mark.png" alt="git"/> <a href="https://github.com/ritik007soni" target="_blank">ritik007soni</a> <br/>
+            <img src="linkedin.png" alt="git"/> <a href="https://www.linkedin.com/in/ritik-soni-60586919b" target="_blank">ritik-soni-60586919b</a> <br/>
+            <img src="mail-inbox-app.png" alt="git"/> <a>ritik.soni.mca21.du@gmail.com</a> <br/>
+            <img src="telephone.png" alt="git"/> <a>+91-9713677761</a> <br/>
+            <img src="Home.png" alt="git"/> <a>Khargone</a> <br/>
+        </div>
+
+        <form class = "item" id="contactUs" onclick="changeAlignmnetMyContact();" onsubmit="event.preventDefault(); validateForm();">
             <h1>Contact Us</h1>
             <label for="name">Name:</label>
             <input type="text" id="name" placeholder="Your Name">

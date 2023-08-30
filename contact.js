@@ -1,8 +1,11 @@
+let items = document.querySelectorAll('.slider .item');
 const inputName = document.querySelector("#name");
 const email = document.querySelector("#email");
 const message = document.querySelector("#message");
 const sucess = document.querySelector("#sucess");
 const errorNotes = document.querySelectorAll(".error");
+const myContact = document.getElementById("#myContact");
+const contactUs = document.getElementById("#contactUs");
 
 //validate data
 function validateForm(){
@@ -48,4 +51,47 @@ function clearMessage(){
 function emailIsValid(email){
     let pattern = /\S+@\S+\.\S+/;
     return pattern.test(email);
+}
+
+let active = 1;
+function loadShow(){
+
+    let stt = 0;
+
+    items[active].style.transform = `none`;
+    items[active].style.zIndex = '1';
+    items[active].style.filter = 'none'
+    items[active].style.opacity = 1;
+
+
+    for(var i = active+1; i<items.length; i++){
+        stt++;
+        items[i].style.transform = `perspective(16px)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(3px)'
+        // items[i].style.opacity = stt > 2 ? 0 : 0.5;
+    }
+
+    stt = 0;
+    for(var i = active-1; i>=0; i--){
+        stt++;
+        items[i].style.transform = `translateX(${-50*stt}px) perspective(16px)`;
+        items[i].style.zIndex = -stt;
+        // items[i].style.filter = 'blur(3px)'
+        // items[i].style.opacity = stt > 2 ? 0 : 0.5;
+    }
+}
+
+loadShow();
+
+function changeAlignmnetMyContact(){
+    active = active + 1 < items.length ? active+1 : active;
+    console.log("Tapped on white");
+    loadShow();
+}
+
+function changeAlignmnetContactUs(){
+    active = active - 1 >= 0 ? active-1 : active;
+    console.log("Tapped on red");
+    loadShow();
 }
