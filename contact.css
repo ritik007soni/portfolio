@@ -130,7 +130,7 @@ img{
 a{
     display: inline-block;
     text-align: center;
-    font-size: large;
+    /* font-size: large; */
     margin-left: 10px;
     cursor: pointer;
 }

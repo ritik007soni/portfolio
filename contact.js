@@ -35,6 +35,8 @@ function validateForm(){
     if(!errorFlag){
         sucess.innerText = "SUCESS!";
     }
+
+    return errorFlag;
 }
 
 //clear error or sucess message
@@ -94,4 +96,16 @@ function changeAlignmnetContactUs(){
     active = active - 1 >= 0 ? active-1 : active;
     console.log("Tapped on red");
     loadShow();
+}
+
+
+//function to send email
+function sendEmail(){
+    var params = {
+        from_name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value
+    }
+
+    emailjs.send("service_goimyqr","template_frndb0f",params)
 }

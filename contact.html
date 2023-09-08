@@ -26,7 +26,7 @@
             <img src="Home.png" alt="git"/> <a>Khargone</a> <br/>
         </div>
 
-        <form class = "item" id="contactUs" onclick="changeAlignmnetMyContact();" onsubmit="event.preventDefault(); validateForm();">
+        <form class = "item" id="contactUs" onclick="changeAlignmnetMyContact();" onsubmit="event.preventDefault(); error = validateForm(); if(!error){sendEmail();}">
             <h1>Contact Us</h1>
             <label for="name">Name:</label>
             <input type="text" id="name" placeholder="Your Name">
@@ -48,5 +48,12 @@
     </div>
 
     <script src="./contact.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('Q9KGdhIb9arL6cXhm');
+        })();
+    </script>
 </body>
 </html>
